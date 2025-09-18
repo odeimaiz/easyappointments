@@ -20,4 +20,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 300);
     }
+
+    // Prefill customer info from query params
+    function getQueryParam(name) {
+        const url = new URL(window.location.href);
+        return url.searchParams.get(name) || '';
+    }
+    function prefillField(selector, param) {
+        var value = getQueryParam(param);
+        if (value) {
+            var el = document.querySelector(selector);
+            if (el) el.value = value;
+        }
+    }
+    prefillField('#first-name', 'first_name');
+    prefillField('#last-name', 'last_name');
+    prefillField('#email', 'email');
 });
