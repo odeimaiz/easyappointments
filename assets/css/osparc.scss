@@ -1,3 +1,10 @@
+/* Force .fs-3 and .fw-bold to 14px and bold */
+.fs-3,
+.fw-bold.fs-3,
+#book-appointment-wizard .fs-3,
+#book-appointment-wizard .fw-bold.fs-3 {
+  font-size: 14px !important;
+}
 /* Ensure provider and customer names use osparc-text-color for contrast */
 .provider-name,
 .customer-name,
@@ -22,6 +29,7 @@
 /* Remove top padding from frame-container */
 #book-appointment-wizard .frame-container {
   padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 /* Remove padding from wizard-frame-2 and wizard-frame-4 */
 #wizard-frame-2,
