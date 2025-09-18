@@ -36,16 +36,15 @@ html, body {
 :root {
   --bs-body-bg: "transparent";
   --osparc-primary: #0090cf;
-  --osparc-secondary: #575c5e;
-  --osparc-text-color: #fff;
+  --osparc-text-color: #282828;
 }
 
 /* Base styles */
 body {
-  background: var(--bs-body-bg, #2f3438) !important;
+  background: var(--bs-body-bg, #e5e9eb) !important;
   font-family: "Manrope", sans-serif;
   font-size: 12px;
-  color: var(--osparc-text-color, #fff) !important;
+  color: var(--osparc-text-color, #282828) !important;
   padding: 0 !important;
 }
 
@@ -78,7 +77,7 @@ body {
 #book-appointment-wizard h2.frame-title {
   font-size: 16px !important;
   margin-bottom: 8px !important;
-  color: var(--osparc-text-color, #FAA) !important;
+  color: var(--osparc-text-color, #282828) !important;
   text-transform: none !important;
 }
 .provider-name,
@@ -89,7 +88,7 @@ body {
 #book-appointment-wizard .appointment-customer,
 #book-appointment-wizard .frame-content .text-secondary,
 #book-appointment-wizard .frame-content .text-muted {
-  color: var(--osparc-text-color, #fff) !important;
+  color: var(--osparc-text-color, #282828) !important;
 }
 .fs-3,
 .fw-bold.fs-3,
