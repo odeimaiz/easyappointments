@@ -106,4 +106,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         attachBackHandler();
     })();
+
+    // osparc: Listen for theme messages from parent and apply CSS variables
+    window.addEventListener('message', function(event) {
+      // Optionally check event.origin for security
+      if (event.data && event.data.type === 'osparc-theme' && event.data.theme) {
+        for (const [key, value] of Object.entries(event.data.theme)) {
+          document.documentElement.style.setProperty(key, value);
+        }
+      }
+    });
 });
