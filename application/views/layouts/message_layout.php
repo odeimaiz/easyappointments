@@ -1,3 +1,4 @@
+<script src="<?= asset_url('assets/js/custom/booking_override.js') ?>"></script>
 <!doctype html>
 <html lang="<?= config('language_code') ?>">
 <head>
