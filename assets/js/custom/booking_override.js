@@ -36,4 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
     prefillField('#first-name', 'first_name');
     prefillField('#last-name', 'last_name');
     prefillField('#email', 'email');
+
+    // Hide the booking header (logo/title bar)
+    var header = document.querySelector('.booking-header, .header, #header, .navbar, .main-header');
+    if (header) header.style.display = 'none';
 });
