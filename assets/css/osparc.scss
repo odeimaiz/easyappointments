@@ -1,3 +1,23 @@
+/* Prevent horizontal overflow in booking widget */
+#book-appointment-wizard, #book-appointment-wizard .frame-container, #book-appointment-wizard .wizard-frame, #book-appointment-wizard .frame-content {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+#book-appointment-wizard .span3 {
+  min-width: 0 !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+/* Center text in main booking wizard containers for small screens */
+#book-appointment-wizard, #book-appointment-wizard .frame-container, #book-appointment-wizard .wizard-frame, #book-appointment-wizard .frame-content {
+  text-align: center;
+}
+html, body {
+  overflow-x: hidden !important;
+}
 
 // osparc: Use CSS variables for theming, fallback to defaults
 :root {
