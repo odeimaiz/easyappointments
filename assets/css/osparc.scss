@@ -1,3 +1,7 @@
+/* Set font size for all text in #select-timezone */
+#select-timezone, #select-timezone option, label[for="select-timezone"] {
+  font-size: 14px !important;
+}
 /* Prevent horizontal overflow in booking widget */
 #book-appointment-wizard, #book-appointment-wizard .frame-container, #book-appointment-wizard .wizard-frame, #book-appointment-wizard .frame-content {
   max-width: 100% !important;
