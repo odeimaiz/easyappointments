@@ -9,11 +9,6 @@ $background-color: #2f3438;
   border-color: darken($primary-color, 10%) !important;
 }
 
-// Navbar
-.navbar {
-  background: linear-gradient(90deg, $primary-color, $secondary-color);
-}
-
 // Typography
 body {
   font-family: "Manrope", sans-serif;
