@@ -40,4 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hide the booking header (logo/title bar)
     var header = document.querySelector('.booking-header, .header, #header, .navbar, .main-header');
     if (header) header.style.display = 'none';
+
+    // Hide the entire footer options bar
+    var footerOptions = document.querySelector('.footer-options, .footer .footer-options, #footer-options');
+    if (footerOptions) footerOptions.style.display = 'none';
 });
