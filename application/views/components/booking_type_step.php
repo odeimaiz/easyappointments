@@ -89,6 +89,16 @@
                         <option value="">
                             <?= lang('please_select') ?>
                         </option>
+                        <option value="<?= ANY_PROVIDER ?>">
+                            <?= lang('any_provider') ?>
+                        </option>
+                        <?php if (isset($available_providers)) : ?>
+                            <?php foreach ($available_providers as $provider) : ?>
+                                <option value="<?= $provider['id'] ?>">
+                                    <?= e($provider['first_name'] . ' ' . $provider['last_name']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </select>
                 </div>
 

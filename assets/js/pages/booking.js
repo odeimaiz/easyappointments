@@ -187,9 +187,9 @@ App.Pages.Booking = (function () {
         if (vars('available_services').length === 1) {
             const onlyServiceId = vars('available_services')[0].id;
             $selectService.val(onlyServiceId).trigger('change');
-            // Set provider to 'any' if available
-            if ($selectProvider.find('option[value="any"]').length > 0) {
-                $selectProvider.val('any').trigger('change');
+            // Set provider to 'any-provider' if available
+            if ($selectProvider.find('option[value="any-provider"]').length > 0) {
+                $selectProvider.val('any-provider').trigger('change');
             }
             // Skip to next step
             setTimeout(function() {
@@ -408,10 +408,13 @@ App.Pages.Booking = (function () {
                 $selectProvider.find('option[value=""]').remove();
             }
 
-            // Add the "Any Provider" entry
-
-            if (providerOptionCount > 2 && Boolean(Number(vars('display_any_provider')))) {
-                $(new Option(lang('any_provider'), 'any-provider')).insertAfter($selectProvider.find('option:first'));
+            // Always add the 'Any Provider' option if enabled and more than one provider
+            if (Boolean(Number(vars('display_any_provider')))) {
+                $selectProvider.prepend(new Option(lang('any_provider'), 'any-provider'));
+            }
+            // Preselect 'Any Provider' if only one service
+            if (vars('available_services').length === 1 && $selectProvider.find('option[value="any-provider"]').length > 0) {
+                $selectProvider.val('any-provider');
             }
 
             App.Http.Booking.getUnavailableDates(

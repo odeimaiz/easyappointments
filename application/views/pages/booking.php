@@ -12,7 +12,10 @@
 
 <!-- Select Service & Provider -->
 
-<?php component('booking_type_step', ['available_services' => vars('available_services')]); ?>
+<?php component('booking_type_step', [
+    'available_services' => vars('available_services'),
+    'available_providers' => vars('available_providers'),
+]); ?>
 
 <!-- osparc -->
 <!-- Service selection skipped: only one service, auto-select and move to next step -->
@@ -24,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Set the service and provider in the wizard state
         window.bookingWizard = window.bookingWizard || {};
         window.bookingWizard.selectedService = availableServices[0].id;
-        window.bookingWizard.selectedProvider = 'any';
+        window.bookingWizard.selectedProvider = 'any-provider';
         // Move to the next step automatically
         setTimeout(function() {
             if (typeof goToWizardStep === 'function') {
@@ -76,5 +79,5 @@ document.addEventListener('DOMContentLoaded', function() {
 <script src="<?= asset_url('assets/js/utils/ui.js') ?>"></script>
 <script src="<?= asset_url('assets/js/http/booking_http_client.js') ?>"></script>
 <script src="<?= asset_url('assets/js/pages/booking.js') ?>"></script>
-
+<script src="<?= asset_url('assets/js/custom/booking_override.js') ?>"></script>
 <?php end_section('scripts'); ?>
