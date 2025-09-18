@@ -15,3 +15,10 @@ body {
   font-size: 12px;
   color: $background-color;
 }
+
+// hide some elements
+.booking-header, .header, #header, .navbar, .main-header,
+.footer-options, .footer .footer-options, #footer-options,
+#wizard-frame-1, #wizard-frame-3 {
+    display: none !important;
+}
