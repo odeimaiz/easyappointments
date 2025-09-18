@@ -2,8 +2,8 @@
 :root {
   --osparc-primary: #0090cf;
   --osparc-secondary: #575c5e;
-  --osparc-bg: #2f3438;
   --osparc-text: #fff;
+  --bs-body-bg: #2f3438;
 }
 
 // Buttons
@@ -13,13 +13,10 @@
   color: var(--osparc-text, #fff) !important;
 }
 
-// Typography
 body {
   font-family: "Manrope", sans-serif;
   font-size: 12px;
   color: var(--osparc-text, #fff) !important;
-  background: var(--osparc-bg, #2f3438) !important;
+  background: var(--bs-body-bg, #2f3438) !important;
 }
-
-// Add your further osparc customizations below
 
