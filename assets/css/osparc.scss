@@ -1,3 +1,14 @@
+/* Ensure provider and customer names use osparc-text-color for contrast */
+.provider-name,
+.customer-name,
+#book-appointment-wizard .provider-name,
+#book-appointment-wizard .customer-name,
+#book-appointment-wizard .appointment-provider,
+#book-appointment-wizard .appointment-customer,
+#book-appointment-wizard .frame-content .text-secondary,
+#book-appointment-wizard .frame-content .text-muted {
+  color: var(--osparc-text-color, #fff) !important;
+}
 /* Make frame-container in wizard-frame-4 flexible and smaller */
 #wizard-frame-4 .frame-container {
   min-height: unset !important;
