@@ -68,7 +68,7 @@ body {
 /* Text color and size overrides */
 #book-appointment-wizard h2.frame-title {
   font-size: 16px !important;
-  margin-bottom: 5px !important;
+  margin-bottom: 8px !important;
   color: var(--osparc-text-color, #FAA) !important;
 }
 .provider-name,
@@ -86,7 +86,6 @@ body {
 #book-appointment-wizard .fs-3,
 #book-appointment-wizard .fw-bold.fs-3 {
   font-size: 14px !important;
-  font-weight: bold !important;
 }
 
 /* Utilities */
