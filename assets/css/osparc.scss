@@ -1,3 +1,11 @@
+#book-appointment-wizard .btn.button-next,
+#book-appointment-wizard .btn.button-back,
+#book-appointment-wizard .btn.btn-primary {
+  text-transform: none !important;
+}
+#book-appointment-wizard label[for="select-timezone"] {
+  font-weight: normal !important;
+}
 /* Set font size for all text in #select-timezone */
 #select-timezone, #select-timezone option, label[for="select-timezone"] {
   font-size: 14px !important;
