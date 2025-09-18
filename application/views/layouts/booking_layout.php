@@ -30,6 +30,15 @@
     <?php component('company_color_style', ['company_color' => vars('company_color')]); ?>
 
     <?php slot('styles'); ?>
+
+    <!-- osparc: Inline CSS to instantly hide header, footer, and unwanted wizard steps to prevent flicker (FOUC) on booking page. -->
+    <style>
+      .booking-header, .header, #header, .navbar, .main-header,
+      .footer-options, .footer .footer-options, #footer-options,
+      #wizard-frame-1, #wizard-frame-3 {
+        display: none !important;
+      }
+    </style>
 </head>
 
 <body>
