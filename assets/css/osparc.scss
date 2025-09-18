@@ -1,9 +1,9 @@
 // osparc: Use CSS variables for theming, fallback to defaults
 :root {
+  --bs-body-bg: "transparent";
   --osparc-primary: #0090cf;
   --osparc-secondary: #575c5e;
   --osparc-text: #fff;
-  --bs-body-bg: #2f3438;
 }
 
 // Buttons
@@ -14,9 +14,9 @@
 }
 
 body {
+  background: var(--bs-body-bg, #2f3438) !important;
   font-family: "Manrope", sans-serif;
   font-size: 12px;
   color: var(--osparc-text, #fff) !important;
-  background: var(--bs-body-bg, #2f3438) !important;
 }
 
