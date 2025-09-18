@@ -1,3 +1,8 @@
+/* Make frame-container in wizard-frame-4 flexible and smaller */
+#wizard-frame-4 .frame-container {
+  min-height: unset !important;
+  height: auto !important;
+}
 /* Reduce top and bottom margins for flatpickr calendar */
 .flatpickr-calendar.animate.inline {
   margin-top: 8px !important;
@@ -7,8 +12,9 @@
 #book-appointment-wizard .frame-container {
   padding-top: 0 !important;
 }
-/* Remove padding from wizard-frame-2 only */
-#wizard-frame-2 {
+/* Remove padding from wizard-frame-2 and wizard-frame-4 */
+#wizard-frame-2,
+#wizard-frame-4 {
   padding: 0 !important;
 }
 /* Booking wizard title (Date & Time) adjustments */
