@@ -44,4 +44,66 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hide the entire footer options bar
     var footerOptions = document.querySelector('.footer-options, .footer .footer-options, #footer-options');
     if (footerOptions) footerOptions.style.display = 'none';
+
+    // Hide the customer info step and programmatically skip it by triggering the next button on step 3
+    (function() {
+        // Wait for the DOM and booking wizard to be ready
+        function skipCustomerStep() {
+            var customerStep = document.querySelector('#wizard-frame-3');
+            if (customerStep) customerStep.style.display = 'none';
+            var next2 = document.querySelector('#button-next-2');
+            if (next2) {
+                next2.addEventListener('click', function(e) {
+                    // Prevent default navigation to step 3
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    // Hide all steps
+                    var allSteps = document.querySelectorAll('.wizard-frame');
+                    allSteps.forEach(function(step) { step.style.display = 'none'; });
+                    // Show confirmation step
+                    var confirmStep = document.querySelector('#wizard-frame-4');
+                    if (confirmStep) confirmStep.style.display = '';
+                    // Update step indicator if present
+                    var stepIndicator = document.querySelector('.active-step');
+                    if (stepIndicator) stepIndicator.classList.remove('active-step');
+                    var step4Indicator = document.querySelector('#step-4');
+                    if (step4Indicator) step4Indicator.classList.add('active-step');
+                }, true);
+            } else {
+                // Try again if not yet available
+                setTimeout(skipCustomerStep, 200);
+            }
+        }
+        skipCustomerStep();
+    })();
+
+    // Also skip step 3 if user goes back from step 4
+    (function skipBackFromStep4() {
+        function attachBackHandler() {
+            var back4 = document.querySelector('#button-back-4');
+            if (back4) {
+                back4.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    // Hide all steps
+                    var allSteps = document.querySelectorAll('.wizard-frame');
+                    allSteps.forEach(function(step) { step.style.display = 'none'; });
+                    // Hide step 3 explicitly
+                    var customerStep = document.querySelector('#wizard-frame-3');
+                    if (customerStep) customerStep.style.display = 'none';
+                    // Show step 2
+                    var step2 = document.querySelector('#wizard-frame-2');
+                    if (step2) step2.style.display = '';
+                    // Update step indicator
+                    var stepIndicator = document.querySelector('.active-step');
+                    if (stepIndicator) stepIndicator.classList.remove('active-step');
+                    var step2Indicator = document.querySelector('#step-2');
+                    if (step2Indicator) step2Indicator.classList.add('active-step');
+                }, true);
+            } else {
+                setTimeout(attachBackHandler, 200);
+            }
+        }
+        attachBackHandler();
+    })();
 });
