@@ -32,13 +32,16 @@
 
     <?php slot('styles'); ?>
 
-    <!-- osparc: Inline CSS to instantly hide header, footer, and unwanted wizard steps to prevent flicker (FOUC) on booking page. -->
+    <!-- osparc: Inline CSS to instantly hide header, footer, unwanted wizard steps, and the back button on step 2 to prevent flicker (FOUC) on booking page. -->
     <style>
-      .booking-header, .header, #header, .navbar, .main-header,
-      .footer-options, .footer .footer-options, #footer-options,
-      #wizard-frame-1, #wizard-frame-3 {
-        display: none !important;
-      }
+        .booking-header, .header, #header, .navbar, .main-header,
+        .footer-options, .footer .footer-options, #footer-options,
+        #wizard-frame-1, #wizard-frame-3 {
+            display: none !important;
+        }
+        #wizard-frame-2 .button-back {
+            display: none !important;
+        }
     </style>
 </head>
 
