@@ -15,27 +15,28 @@
 #book-appointment-wizard h2.frame-title {
   font-size: 16px !important;
   margin-bottom: 5px !important;
+  color: var(--osparc-text-color, #FAA) !important;
 }
 // osparc: Use CSS variables for theming, fallback to defaults
 :root {
   --bs-body-bg: "transparent";
   --osparc-primary: #0090cf;
   --osparc-secondary: #575c5e;
-  --osparc-text: #fff;
+  --osparc-text-color: #fff;
 }
 
 // Buttons
 .btn-primary {
   background-color: var(--osparc-primary, #0090cf) !important;
   border-color: var(--osparc-primary, #0090cf) !important;
-  color: var(--osparc-text, #fff) !important;
+  color: var(--osparc-text-color, #fff) !important;
 }
 
 body {
   background: var(--bs-body-bg, #2f3438) !important;
   font-family: "Manrope", sans-serif;
   font-size: 12px;
-  color: var(--osparc-text, #fff) !important;
+  color: var(--osparc-text-color, #fff) !important;
   padding: 0px !important;
 }
 
