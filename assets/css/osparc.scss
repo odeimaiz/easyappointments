@@ -1,3 +1,14 @@
+/* Robustly target confirmation message text color */
+.confirmation-message, .confirmation-message * {
+  color: var(--osparc-text-color, #282828) !important;
+}
+/* Target confirmation message containers and margin utility classes for color */
+.message-frame,
+.mb-4,
+.mb-5,
+.mt-2 {
+  color: var(--osparc-text-color, #282828) !important;
+}
 #book-appointment-wizard .btn.button-next,
 #book-appointment-wizard .btn.button-back,
 #book-appointment-wizard .btn.btn-primary {
