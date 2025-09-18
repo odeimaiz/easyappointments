@@ -14,6 +14,27 @@
 
 <?php component('booking_type_step', ['available_services' => vars('available_services')]); ?>
 
+<!-- osparc -->
+<!-- Service selection skipped: only one service, auto-select and move to next step -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Assume only one service exists
+    var availableServices = <?= json_encode(vars('available_services')) ?>;
+    if (availableServices.length === 1) {
+        // Set the service and provider in the wizard state
+        window.bookingWizard = window.bookingWizard || {};
+        window.bookingWizard.selectedService = availableServices[0].id;
+        window.bookingWizard.selectedProvider = 'any';
+        // Move to the next step automatically
+        setTimeout(function() {
+            if (typeof goToWizardStep === 'function') {
+                goToWizardStep(2);
+            }
+        }, 100);
+    }
+});
+</script>
+
 <!-- Pick An Appointment Date -->
 
 <?php component('booking_time_step', ['grouped_timezones' => vars('grouped_timezones')]); ?>

@@ -182,6 +182,24 @@ App.Pages.Booking = (function () {
             $selectService.val(firstServiceId).trigger('change');
         }
 
+        // osparc
+        // If only one service, auto-select it and 'Any Provider', skip service step
+        if (vars('available_services').length === 1) {
+            const onlyServiceId = vars('available_services')[0].id;
+            $selectService.val(onlyServiceId).trigger('change');
+            // Set provider to 'any' if available
+            if ($selectProvider.find('option[value="any"]').length > 0) {
+                $selectProvider.val('any').trigger('change');
+            }
+            // Skip to next step
+            setTimeout(function() {
+                $('.active-step').removeClass('active-step');
+                $('#step-2').addClass('active-step');
+                $('#wizard-frame-1').hide();
+                $('#wizard-frame-2').fadeIn();
+            }, 100);
+        }
+
         // If the manage mode is true, the appointment data should be loaded by default.
         if (manageMode) {
             applyAppointmentData(vars('appointment_data'), vars('provider_data'), vars('customer_data'));
